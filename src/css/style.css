@@ -6,10 +6,86 @@
   scroll-behavior: smooth;
 }
 
-html,
-body {
-  min-height: 100vh;
+button {
+  outline: none;
+  background-color: #006eff;
+  color: #FFF;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: background-color 400ms;
+}
+button:hover {
+  background-color: #074596;
+}
+
+main {
+  padding: 2%;
+}
+main section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+main section .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: center;
+}
+main section .wrapper .box {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 15px;
+  position: relative;
+  border: solid 3px #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 35px;
+  width: 150px;
+  transition: border-color 400ms;
+}
+main section .wrapper .box img {
+  object-fit: none;
+}
+main section .wrapper .box img.svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #FFF;
+  border-radius: 5px;
+}
+main section .wrapper .box p {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+main section .wrapper .box::before {
+  content: "";
+  position: absolute;
+  opacity: 0.2;
+  background-color: #006eff;
+  height: 100%;
   width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  transition: opacity 400ms, border-radius 400ms;
+}
+main section .wrapper .box.checked {
+  border-color: #006eff;
+}
+main section .wrapper .box.checked::before {
+  opacity: 0.7;
+  border-radius: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
