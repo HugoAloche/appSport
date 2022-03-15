@@ -116,6 +116,24 @@ main#seance section .info {
   gap: 5px;
   background-color: #eee;
 }
+main#seance section progress {
+  -webkit-appearance: none;
+}
+main#seance section ::-webkit-progress-bar {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  background-color: #4a4a4a;
+}
+main#seance section ::-webkit-progress-value {
+  border-radius: 5px;
+  background-color: #006eff;
+  transition: width 400ms;
+}
+main#seance section div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
 table {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

@@ -13,35 +13,36 @@
     <main id="seance">
         <section>
             <h1 id="title"></h1>
-            <p class="info"><img src="../../src/svg/info_black_24dp.svg" alt=""> Votre séance à commencer finissez la première série et cliquer sur fait!</p>
+            <p class="info"><img src="../../src/svg/info_black_24dp.svg" alt="Icône d'information"> Votre séance à commencer finissez la première série et cliquer sur fait!</p>
             <img id="img" src="" alt="">
             <table>
                 <thead>
                     <tr>
                         <th>Série</th>
-                        <th>Répétitions</th>
                         <th>Fait</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>0</td>
-                        <td><img src="../../src/svg/close_black_24dp.svg" alt=""></td>
+                        <td><img src="../../src/svg/close_black_24dp.svg" alt="Icône d'echec"></td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>0</td>
-                        <td><img src="../../src/svg/close_black_24dp.svg" alt=""></td>
+                        <td><img src="../../src/svg/close_black_24dp.svg" alt="Icône d'echec"></td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>0</td>
-                        <td><img src="../../src/svg/close_black_24dp.svg" alt=""></td>
+                        <td><img src="../../src/svg/close_black_24dp.svg" alt="Icône d'echec"></td>
                     </tr>
                 </tbody>
             </table>
-            <button>Fait ! <img src="../../src/svg/done_white.svg" alt=""></button>
+            <button id="done">Fait ! <img src="../../src/svg/done_white.svg" alt="Icône de validation"></button>
+            <div>
+                <p id="currentTime">0s</p>
+                <progress id="pause" max="30" value="0"></progress>
+                <p>30s</p>
+            </div>
         </section>
     </main>
 </body>
