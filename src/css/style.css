@@ -128,6 +128,12 @@ main#seance section .info {
   gap: 5px;
   background-color: #eee;
 }
+main#seance section .info.blue {
+  color: #FFF;
+  background-color: rgba(7, 69, 150, 0.6);
+  width: fit-content;
+  display: none;
+}
 main#seance section progress {
   -webkit-appearance: none;
 }

@@ -126,6 +126,12 @@
                         display: flex;
                         gap: 5px;
                         background-color: #eee;
+                        &.blue {
+                            color: #FFF;
+                            background-color: rgb(7, 69, 150, 0.6);
+                            width: fit-content;
+                            display: none;
+                        }
                     }
                     progress {
                         -webkit-appearance: none;

@@ -32,6 +32,7 @@ function initApp() {
 
 function startPause() {
     document.getElementById('done').style.visibility = "hidden";
+    document.getElementById('pauseText').style.display = "flex";
     setTimeout(() => {
         document.getElementById('pause').value = i;
         i++;
@@ -41,6 +42,7 @@ function startPause() {
         } else {
             i = 0;
             document.getElementById('done').style.visibility = "visible";
+            document.getElementById('pauseText').style.display = "none";
             document.getElementById('pause').value = 0;
             current_time.textContent = "0";
         }
