@@ -17,6 +17,11 @@
         
         a {
             text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style-type: none;
         }
         
         button {
@@ -170,6 +175,32 @@
                         padding: 15px;
                         text-align: center;
                     }
+                }
+            }
+        }
+        
+        footer {
+            padding: 50px;
+            background-color: #4a4a4a;
+            display: flex;
+            justify-content: space-around;
+            gap: 35px;
+            width: 100%;
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                align-items: center;
+            }
+            ul {
+                color: #FFF;
+                width: 100%;
+                li {
+                    &:first-child {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        padding-bottom: 20px;
+                    }
+                    line-height: 35px;
                 }
             }
         }
