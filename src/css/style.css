@@ -104,6 +104,7 @@ main section .wrapper .box.checked::before {
   border-radius: 0;
 }
 main#seance section {
+  margin: 50px 0;
   justify-content: flex-start;
   gap: 35px;
 }

@@ -46,7 +46,6 @@ function startPause() {
 
 function seriesDone(index) {
     let i = 0;
-    let exos_done = 0;
     lst_img.forEach(elem => {
         if (elem.src.includes('close') && i < 1) {
             elem.src = "../../src/svg/done_green.svg";
