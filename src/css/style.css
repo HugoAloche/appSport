@@ -146,6 +146,9 @@ main#seance section div {
   align-items: center;
   gap: 15px;
 }
+main#mentions section {
+  margin: 0 50px;
+}
 
 table {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
