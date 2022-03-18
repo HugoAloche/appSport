@@ -31,6 +31,7 @@ function initApp() {
 }
 
 function startPause() {
+    document.getElementById('done').style.visibility = "hidden";
     setTimeout(() => {
         document.getElementById('pause').value = i;
         i++;
@@ -38,6 +39,8 @@ function startPause() {
         if (i < 31) {
             startPause();
         } else {
+            i = 0;
+            document.getElementById('done').style.visibility = "visible";
             document.getElementById('pause').value = 0;
             current_time.textContent = "0";
         }
