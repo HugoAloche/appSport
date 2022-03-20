@@ -5,43 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App de sport - Hugo Aloche</title>
+    <title>Accueil - Mon app sport - Hugo Aloche</title>
     <link rel="stylesheet" href="src/css/style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <main>
+    <main id="Home">
         <section>
-            <h1>Ma séance de sport</h1>
+            <h1>Commencer mon entrainement</h1>
+            <a href="pages/preparation-seance/"><button class="invert">Commencer</button></a>
+        </section>
+        <section>
+            <h2>Comment se déroule un entrainement ?</h2>
             <div class="wrapper">
-                <div class="box">
-                    <img src="src/img/Dips.webp" alt="Athlère qui fait des dips">
-                    <p>Dips</p>
-                    <img class="svg" src="src/svg/done_black_24dp.svg" alt="Icône de validation">
-                </div>
-                <div class="box">
-                    <img src="src/img/Squat.webp" alt="Athlère qui fait des squats">
-                    <p>Squat</p>
-                    <img class="svg" src="src/svg/done_black_24dp.svg" alt="Icône de validation">
-                </div>
-                <div class="box">
-                    <img src="src/img/Pompes.webp" alt="Athlère qui fait des pompes">
-                    <p>Pompes</p>
-                    <img class="svg" src="src/svg/done_black_24dp.svg" alt="Icône de validation">
-                </div>
-                <div class="box">
-                    <img src="src/img/Abdos.webp" alt="Athlère qui fait des abdos">
-                    <p>Abdos</p>
-                    <img class="svg" src="src/svg/done_black_24dp.svg" alt="Icône de validation">
-                </div>
-                <div class="box">
-                    <img src="src/img/Tractions.webp" alt="Athlère qui fait des tractions">
-                    <p>Tractions</p>
-                    <img class="svg" src="src/svg/done_black_24dp.svg" alt="Icône de validation">
-                </div>
+                <img src="src/img/tuto1.png" alt="Image explicative du fonctionnement de l'app web">
+                <p class="info"><img src="src/svg/info_black_24dp.svg" alt=""> Je sélectionne les exercices pour ma séance.</p>
+                <img src="src/img/tuto2.png" alt="Image explicative du fonctionnement de l'app web">
+                <p class="info"><img src="src/svg/info_black_24dp.svg" alt=""> Je suis les consignes, appuie sur le bouton "Fait !" et respecte le temps de repos.</p>
             </div>
-            <a href="pages/seance"><button id="start">COMMENCER (<span id="nb_exos"></span>)</button></a>
+        </section>
+        <section>
+            <h3>Des reccomandations ?</h3>
+            <form id="form">
+                <input type="text" name="prenom" id="prenom" placeholder="Prénom *" required>
+                <input type="email" name="email" id="email" placeholder="Email *" required>
+                <select name="objet" id="objet" required>
+                    <option value="0">Idée</option>
+                    <option value="1">Bug</option>
+                    <option value="2">Questions</option>
+                </select>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message *" required></textarea>
+                <button type="submit">Envoyée !</button>
+            </form>
         </section>
     </main>
     <footer>
@@ -56,7 +51,7 @@
         </ul>
     </footer>
 </body>
-
 <script src="src/js/script.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 
 </html>

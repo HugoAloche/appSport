@@ -11,8 +11,28 @@ h1 {
   color: #4a4a4a;
 }
 
-h1 {
+.info {
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 80%;
+  display: flex;
+  gap: 5px;
+  background-color: #eee;
+}
+.info.blue {
+  color: #FFF;
+  background-color: rgba(7, 69, 150, 0.6);
+  width: fit-content;
+  display: none;
+}
+
+h1,
+h2,
+h3 {
   margin: 50px 0;
+  text-align: center;
+  font-size: 24px;
 }
 
 a {
@@ -44,6 +64,13 @@ button {
 button:hover {
   background-color: #074596;
 }
+button.invert {
+  background-color: #FFF;
+  color: #4a4a4a;
+}
+button.invert:hover {
+  background-color: #cecece;
+}
 
 main {
   padding: 2%;
@@ -73,9 +100,6 @@ main section .wrapper .box {
   gap: 35px;
   width: 150px;
   transition: border-color 400ms;
-}
-main section .wrapper .box img {
-  object-fit: none;
 }
 main section .wrapper .box img.svg {
   position: absolute;
@@ -119,21 +143,6 @@ main#seance section {
   justify-content: flex-start;
   gap: 35px;
 }
-main#seance section .info {
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  width: 80%;
-  display: flex;
-  gap: 5px;
-  background-color: #eee;
-}
-main#seance section .info.blue {
-  color: #FFF;
-  background-color: rgba(7, 69, 150, 0.6);
-  width: fit-content;
-  display: none;
-}
 main#seance section progress {
   -webkit-appearance: none;
 }
@@ -154,6 +163,36 @@ main#seance section div {
 }
 main#mentions section {
   margin: 0 50px;
+}
+main#Home {
+  padding: inherit;
+  background-image: url("../img/background.png");
+  background-size: contain;
+}
+main#Home section {
+  background-color: rgba(0, 110, 255, 0.8);
+  justify-content: center;
+}
+main#Home section h1,
+main#Home section h2,
+main#Home section h3 {
+  color: #FFF;
+  text-shadow: 3px 2px 3px rgba(255, 255, 255, 0.2);
+}
+main#Home section .wrapper img {
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+@media screen and (max-width: 992px) {
+  main#Home section .wrapper img {
+    width: 90%;
+  }
+}
+main#Home section .wrapper .info img {
+  width: auto;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0;
 }
 
 table {
@@ -176,6 +215,37 @@ table thead tr th:last-child {
 table tbody tr td {
   padding: 15px;
   text-align: center;
+}
+
+form {
+  background-color: #FFF;
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  width: 90%;
+}
+form input,
+form textarea,
+form select {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  resize: none;
+  color: #4a4a4a;
+  width: 100%;
+}
+form input::placeholder,
+form textarea::placeholder,
+form select::placeholder {
+  color: #4a4a4a;
+}
+form button {
+  width: fit-content;
 }
 
 footer {
