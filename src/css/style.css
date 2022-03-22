@@ -276,4 +276,12 @@ footer ul li:first-child {
   padding-bottom: 20px;
 }
 
+.icon {
+  font-size: 50px;
+}
+
+.svg {
+  width: 90%;
+}
+
 /*# sourceMappingURL=style.css.map */
