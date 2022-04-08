@@ -1,3 +1,4 @@
+import { createFooter } from "../../src/js/footer.js";
 window.addEventListener('load', initApp);
 
 var i = 0;
@@ -7,6 +8,7 @@ var lst_img = [];
 var lst_exos = [];
 
 function initApp() {
+    createFooter();
     for (let i = 0; i < localStorage.length; i++) {
         let exos = {
             index: i,
