@@ -57,7 +57,7 @@ ul {
   box-shadow: none;
 }
 .emojis.checked {
-  border-color: #4a4a4a;
+  background-color: #4a4a4a;
 }
 
 button {

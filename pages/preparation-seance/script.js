@@ -5,9 +5,15 @@ var nb_checked = 0;
 var seance = [];
 
 function initApp() {
+    localStorage.clear();
+    localStorage.setItem('difficulty', 'easy');
+    console.log(localStorage);
     createFooter();
     const lst_exos = document.querySelectorAll('.box');
-    const lst_emojis = document.querySelectorAll('.emojis');
+    const lst_emojis = [];
+    document.querySelectorAll('.emojis').forEach(elem => {
+        lst_emojis.push(elem);
+    })
     const start_btn = document.getElementById('start');
     lst_exos.forEach(function(elem, index) {
         elem.addEventListener('click', function() {
@@ -16,7 +22,7 @@ function initApp() {
     })
     lst_emojis.forEach(function(elem, index) {
         elem.addEventListener('click', function() {
-            isEmojisCheck(this, index);
+            isEmojisCheck(lst_emojis, index);
         })
     })
     document.getElementById('nb_exos').textContent = nb_checked;
@@ -53,7 +59,6 @@ function isActCheck(elem, index) {
 }
 
 function saveToStorage(event) {
-    localStorage.clear();
     if (seance.length === 0) {
         event.preventDefault();
         alert('Vous devez au moins choisir un exercice.')
@@ -64,6 +69,15 @@ function saveToStorage(event) {
     }
 }
 
-function isEmojisCheck(elem, index) {
-
+function isEmojisCheck(lst, index) {
+    for (let key in lst) {
+        if (key == index) {
+            if (!lst[key].classList.contains('checked')) {
+                lst[key].classList.add('checked');
+                localStorage.setItem('difficulty', lst[key].id)
+            }
+        } else {
+            lst[key].classList.remove('checked');
+        }
+    }
 }

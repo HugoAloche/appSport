@@ -17,12 +17,12 @@ function initApp() {
         }
         lst_exos.push(exos);
     }
-    console.table(lst_exos);
+    console.table(localStorage);
     const title = document.getElementById('title');
     const img = document.getElementById('img');
     const btn_done = document.getElementById('done');
     document.querySelectorAll('td img').forEach(elem => {
-        this.lst_img.push(elem);
+        lst_img.push(elem);
     })
     title.textContent = JSON.parse(localStorage.getItem('exos0')).name;
     img.src = "../../src/img/" + JSON.parse(localStorage.getItem('exos0')).name + ".webp";
@@ -30,6 +30,7 @@ function initApp() {
         startPause();
         seriesDone(getIndex());
     });
+    makeTable(localStorage.getItem('difficulty'), title.textContent);
 }
 
 function startPause() {
@@ -109,5 +110,82 @@ function getIndex() {
     })
     if (find) {
         return lst_exos[index].index;
+    }
+}
+
+function makeTable(difficulty, name) {
+    const table = document.getElementById('table');
+    const reps = document.querySelectorAll('.rep');
+    console.log(difficulty, name);
+    if (name === 'Gainage') {
+        const exo = new Gainage(difficulty);
+        exo.setSeries(table);
+        exo.setRep(reps);
+    } else if (name === 'Dips') {
+        const exo = new Dips(difficulty);
+        console.log(exo.setRep());
+    } else if (name === 'Squat') {
+        const exo = new Squat(difficulty);
+        console.log(exo.setRep());
+    } else if (name === 'Pompes') {
+        const exo = new Pompes(difficulty);
+        console.log(exo.setRep());
+    } else if (name === 'Abdos') {
+        const exo = new Abdos(difficulty);
+        console.log(exo.setRep());
+    } else if (name === 'Traction') {
+        const exo = new Traction(difficulty);
+        console.log(exo.setRep());
+    } else if (name === 'Chaise') {
+        const exo = new Chaise(difficulty);
+        console.log(exo.setRep());
+    } else if (name === 'Fentes') {
+        const exo = new Fentes(difficulty);
+        console.log(exo.setRep());
+    } else if (name === 'Superman') {
+        const exo = new Superman(difficulty);
+        console.log(exo.setRep());
+    }
+}
+class Gainage {
+    constructor(difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    setSeries(pTable) {
+        let lst_tr = [];
+        let lst_td = [];
+        let lst_img = [];
+        if (this.difficulty === 'easy') {
+            for (let i = 0; i < 3; i++) {
+                lst_tr[i] = pTable.appendChild(document.createElement('tr'));
+                for (let k = 0; k < 3; k++) {
+                    lst_td[k] = lst_tr[i].appendChild(document.createElement('td'));
+                    console.log(k, lst_td[k]);
+                    // lst_td[k].textContent = i + 1;
+                    // lst_td[k + 1].classList.add('rep');
+                    // lst_td[1]
+                    // lst_img[k] = lst_td[2].appendChild(document.createElement('img'));
+                    // lst_img[k].src = '../../src/svg/close_black_24dp.svg';
+                }
+            }
+        } else if (this.difficulty === 'medium') {} else {}
+
+    }
+
+    setRep(pTd) {
+        if (this.difficulty === 'easy') {
+            pTd.forEach(td => {
+                td.textContent = '30s';
+            })
+        } else if (this.difficulty === 'medium') {
+            pTd.forEach(td => {
+                td.textContent = '45s';
+            })
+        } else {
+            pTd.forEach(td => {
+                td.textContent = '1min';
+            })
+        }
     }
 }
