@@ -44,6 +44,22 @@ ul {
   list-style-type: none;
 }
 
+.emojis {
+  font-size: 32px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: box-shadow 600ms, background-color 600ms;
+  background-color: #eee;
+  cursor: pointer;
+}
+.emojis:hover {
+  box-shadow: none;
+}
+.emojis.checked {
+  border-color: #4a4a4a;
+}
+
 button {
   margin: 50px 0;
   outline: none;
@@ -95,6 +111,7 @@ main section {
   align-items: center;
   min-height: 100vh;
   gap: 35px;
+  padding: 50px 0;
 }
 main section .wrapper {
   display: flex;
@@ -267,7 +284,6 @@ form button {
 }
 
 header {
-  padding: 25px 0;
   position: fixed;
   background-color: #FFF;
   width: 100%;
@@ -277,6 +293,26 @@ header {
 header ul {
   display: flex;
   justify-content: space-around;
+}
+header ul li {
+  overflow: hidden;
+  padding: 25px 0;
+}
+header ul li a {
+  position: relative;
+}
+header ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: -100%;
+  height: 2px;
+  width: 100%;
+  background-color: #3a3a3a;
+  transition: left 600ms;
+}
+header ul li a:hover::before {
+  left: 0;
 }
 
 footer {

@@ -44,6 +44,22 @@ ul {
     list-style-type: none;
 }
 
+.emojis {
+    font-size: 32px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: box-shadow 600ms, background-color 600ms;
+    background-color: #eee;
+    cursor: pointer;
+    &:hover {
+        box-shadow: none;
+    }
+    &.checked {
+        border-color: #4a4a4a;
+    }
+}
+
 button {
     margin: 50px 0;
     outline: none;
@@ -96,6 +112,7 @@ main {
         align-items: center;
         min-height: 100vh;
         gap: 35px;
+        padding: 50px 0;
         .wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -281,7 +298,6 @@ form {
 }
 
 header {
-    padding: 25px 0;
     position: fixed;
     background-color: #FFF;
     width: 100%;
@@ -290,6 +306,28 @@ header {
     ul {
         display: flex;
         justify-content: space-around;
+        li {
+            overflow: hidden;
+            padding: 25px 0;
+            a {
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: -100%;
+                    height: 2px;
+                    width: 100%;
+                    background-color: #3a3a3a;
+                    transition: left 600ms;
+                }
+                &:hover {
+                    &::before {
+                        left: 0;
+                    }
+                }
+            }
+        }
     }
 }
 

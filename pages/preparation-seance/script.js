@@ -7,10 +7,16 @@ var seance = [];
 function initApp() {
     createFooter();
     const lst_exos = document.querySelectorAll('.box');
+    const lst_emojis = document.querySelectorAll('.emojis');
     const start_btn = document.getElementById('start');
     lst_exos.forEach(function(elem, index) {
         elem.addEventListener('click', function() {
-            isCheck(this, index);
+            isActCheck(this, index);
+        })
+    })
+    lst_emojis.forEach(function(elem, index) {
+        elem.addEventListener('click', function() {
+            isEmojisCheck(this, index);
         })
     })
     document.getElementById('nb_exos').textContent = nb_checked;
@@ -19,7 +25,7 @@ function initApp() {
     });
 }
 
-function isCheck(elem, index) {
+function isActCheck(elem, index) {
     if (elem.classList.contains('checked')) {
         elem.classList.remove('checked');
         elem.children[2].classList.remove('checked');
@@ -56,4 +62,8 @@ function saveToStorage(event) {
             localStorage.setItem('exos' + index, JSON.stringify(elem));
         })
     }
+}
+
+function isEmojisCheck(elem, index) {
+
 }
