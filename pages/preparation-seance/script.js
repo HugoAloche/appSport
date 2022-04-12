@@ -1,9 +1,11 @@
+import { createFooter } from "../../src/js/footer.js";
 window.addEventListener('load', initApp);
 
 var nb_checked = 0;
 var seance = [];
 
 function initApp() {
+    createFooter();
     const lst_exos = document.querySelectorAll('.box');
     const start_btn = document.getElementById('start');
     lst_exos.forEach(function(elem, index) {
