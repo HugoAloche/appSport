@@ -3,6 +3,9 @@ import { createFooter } from './footer.js';
 './footer.js';
 window.addEventListener('load', initApp);
 
+<<<<<<< HEAD
+function initApp() {}
+=======
 function initApp() {
     createHeader();
     createFooter();
@@ -26,3 +29,4 @@ function sendMail(event) {
         message => alert(message)
     );
 }
+>>>>>>> da85a1ce6288d46ade8af864df1e53cc33d9b26f

@@ -110,8 +110,15 @@ main section {
   justify-content: space-around;
   align-items: center;
   min-height: 100vh;
-  gap: 35px;
+<<<<<<< HEAD
   padding: 50px 0;
+=======
+  gap: 35px;
+<<<<<<< HEAD
+  padding: 50px 0;
+=======
+>>>>>>> da85a1ce6288d46ade8af864df1e53cc33d9b26f
+>>>>>>> fb9b6199e825a155b522954645ab986f4eb59174
 }
 main section .wrapper {
   display: flex;
@@ -140,6 +147,7 @@ main section .wrapper .box img.svg {
   background-color: #FFF;
   border-radius: 5px;
   transition: background-color 400ms;
+  width: 32px;
 }
 main section .wrapper .box img.svg.checked {
   background-color: #006eff;
