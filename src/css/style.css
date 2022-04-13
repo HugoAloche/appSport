@@ -422,6 +422,7 @@ footer ul li:first-child {
 }
 footer ul li a {
   position: relative;
+  cursor: pointer;
 }
 footer ul li a::before {
   content: "";

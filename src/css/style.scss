@@ -443,6 +443,7 @@ footer {
             line-height: 35px;
             a {
                 position: relative;
+                cursor: pointer;
                 &::before {
                     content: '';
                     position: absolute;
