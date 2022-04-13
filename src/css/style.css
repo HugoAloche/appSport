@@ -82,6 +82,11 @@ article h1::before {
   bottom: -10px;
   border-radius: 0 10px 0 0;
 }
+article .date {
+  font-size: 14px;
+  text-align: right;
+  font-style: italic;
+}
 
 a {
   text-decoration: none;
