@@ -12,7 +12,7 @@ export function createFooter() {
     lst1.appendChild(li1);
 
     const li2 = document.createElement('li');
-    li2.textContent = "Dernière mise à jour (v1) : 08/04/2022";
+    li2.textContent = "Dernière mise à jour (v1.2) : 13/04/2022";
     lst1.appendChild(li2);
 
     const li3 = document.createElement('li');
