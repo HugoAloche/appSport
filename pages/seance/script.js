@@ -21,16 +21,13 @@ function initApp() {
     const title = document.getElementById('title');
     const img = document.getElementById('img');
     const btn_done = document.getElementById('done');
-    document.querySelectorAll('td img').forEach(elem => {
-        lst_img.push(elem);
-    })
     title.textContent = JSON.parse(localStorage.getItem('exos0')).name;
     img.src = "../../src/img/" + JSON.parse(localStorage.getItem('exos0')).name + ".webp";
     btn_done.addEventListener('click', function() {
         startPause();
         seriesDone(getIndex());
     });
-    makeTable(localStorage.getItem('difficulty'), title.textContent);
+    makeTable(JSON.parse(localStorage.getItem('difficulty')).type, title.textContent, JSON.parse(localStorage.getItem('difficulty')).series);
 }
 
 function startPause() {
@@ -113,79 +110,103 @@ function getIndex() {
     }
 }
 
-function makeTable(difficulty, name) {
+function makeTable(difficulty, name, series) {
     const table = document.getElementById('table');
-    const reps = document.querySelectorAll('.rep');
-    console.log(difficulty, name);
-    if (name === 'Gainage') {
-        const exo = new Gainage(difficulty);
-        exo.setSeries(table);
-        exo.setRep(reps);
-    } else if (name === 'Dips') {
-        const exo = new Dips(difficulty);
-        console.log(exo.setRep());
-    } else if (name === 'Squat') {
-        const exo = new Squat(difficulty);
-        console.log(exo.setRep());
-    } else if (name === 'Pompes') {
-        const exo = new Pompes(difficulty);
-        console.log(exo.setRep());
-    } else if (name === 'Abdos') {
-        const exo = new Abdos(difficulty);
-        console.log(exo.setRep());
-    } else if (name === 'Traction') {
-        const exo = new Traction(difficulty);
-        console.log(exo.setRep());
-    } else if (name === 'Chaise') {
-        const exo = new Chaise(difficulty);
-        console.log(exo.setRep());
-    } else if (name === 'Fentes') {
-        const exo = new Fentes(difficulty);
-        console.log(exo.setRep());
-    } else if (name === 'Superman') {
-        const exo = new Superman(difficulty);
-        console.log(exo.setRep());
+    console.log(difficulty, name, series);
+    let td_lst = [];
+    for (let i = 0; i < series; i++) {
+        let tds = [];
+        let tr = table.appendChild(document.createElement('tr'));
+        for (let k = 0; k < 3; k++) {
+            tds.push(tr.appendChild(document.createElement('td')));
+        }
+        td_lst.push(tds);
     }
+    td_lst.forEach(function(td, index) {
+        td[0].textContent = index + 1;
+        td[1].textContent = getRep(name, difficulty);
+        let img = td[2].appendChild(document.createElement('img'));
+        img.src = "../../src/svg/close_black_24dp.svg";
+        img.alt = "Icône d'echec";
+    })
+
+    document.querySelectorAll('td img').forEach(elem => {
+        lst_img.push(elem);
+    })
 }
-class Gainage {
-    constructor(difficulty) {
-        this.difficulty = difficulty;
-    }
 
-    setSeries(pTable) {
-        let lst_tr = [];
-        let lst_td = [];
-        let lst_img = [];
-        if (this.difficulty === 'easy') {
-            for (let i = 0; i < 3; i++) {
-                lst_tr[i] = pTable.appendChild(document.createElement('tr'));
-                for (let k = 0; k < 3; k++) {
-                    lst_td[k] = lst_tr[i].appendChild(document.createElement('td'));
-                    console.log(k, lst_td[k]);
-                    // lst_td[k].textContent = i + 1;
-                    // lst_td[k + 1].classList.add('rep');
-                    // lst_td[1]
-                    // lst_img[k] = lst_td[2].appendChild(document.createElement('img'));
-                    // lst_img[k].src = '../../src/svg/close_black_24dp.svg';
-                }
-            }
-        } else if (this.difficulty === 'medium') {} else {}
-
-    }
-
-    setRep(pTd) {
-        if (this.difficulty === 'easy') {
-            pTd.forEach(td => {
-                td.textContent = '30s';
-            })
-        } else if (this.difficulty === 'medium') {
-            pTd.forEach(td => {
-                td.textContent = '45s';
-            })
+function getRep(name, difficulty) {
+    if (name === "Gainage") {
+        if (difficulty === "easy") {
+            return '30s';
+        } else if (difficulty === "medium") {
+            return '45s';
         } else {
-            pTd.forEach(td => {
-                td.textContent = '1min';
-            })
+            return '1mn';
+        }
+    } else if (name === "Dips") {
+        if (difficulty === "easy") {
+            return '5';
+        } else if (difficulty === "medium") {
+            return '10';
+        } else {
+            return '15';
+        }
+    } else if (name === "Squat") {
+        if (difficulty === "easy") {
+            return '10';
+        } else if (difficulty === "medium") {
+            return '20';
+        } else {
+            return '20(+10Kg)';
+        }
+    } else if (name === "Pompes") {
+        if (difficulty === "easy") {
+            return '10';
+        } else if (difficulty === "medium") {
+            return '15';
+        } else {
+            return '15(+10Kg)';
+        }
+    } else if (name === "Abdos") {
+        if (difficulty === "easy") {
+            return '5';
+        } else if (difficulty === "medium") {
+            return '10';
+        } else {
+            return '10(+10Kg)';
+        }
+    } else if (name === "Traction") {
+        if (difficulty === "easy") {
+            return '5';
+        } else if (difficulty === "medium") {
+            return '15';
+        } else {
+            return '15(+10Kg)';
+        }
+    } else if (name === "Chaise") {
+        if (difficulty === "easy") {
+            return '30s';
+        } else if (difficulty === "medium") {
+            return '45s';
+        } else {
+            return '1mn';
+        }
+    } else if (name === "Fentes") {
+        if (difficulty === "easy") {
+            return '10';
+        } else if (difficulty === "medium") {
+            return '20';
+        } else {
+            return '20(+10Kg)';
+        }
+    } else if (name === "Superman") {
+        if (difficulty === "easy") {
+            return '10';
+        } else if (difficulty === "medium") {
+            return '15';
+        } else {
+            return '15(+10Kg)';
         }
     }
 }

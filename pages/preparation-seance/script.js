@@ -6,7 +6,11 @@ var seance = [];
 
 function initApp() {
     localStorage.clear();
-    localStorage.setItem('difficulty', 'easy');
+    let difficulty_data = {
+        type: 'easy',
+        series: 3
+    }
+    localStorage.setItem('difficulty', JSON.stringify(difficulty_data));
     console.log(localStorage);
     createFooter();
     const lst_exos = document.querySelectorAll('.box');
@@ -70,11 +74,23 @@ function saveToStorage(event) {
 }
 
 function isEmojisCheck(lst, index) {
+    let series = 3;
     for (let key in lst) {
         if (key == index) {
             if (!lst[key].classList.contains('checked')) {
+                if (lst[key].id === "easy") {
+                    series = 3;
+                } else if (lst[key].id === "medium") {
+                    series = 6;
+                } else {
+                    series = 8;
+                }
+                let difficulty_data = {
+                    type: lst[key].id,
+                    series: series
+                }
                 lst[key].classList.add('checked');
-                localStorage.setItem('difficulty', lst[key].id)
+                localStorage.setItem('difficulty', JSON.stringify(difficulty_data))
             }
         } else {
             lst[key].classList.remove('checked');
