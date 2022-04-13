@@ -6,7 +6,7 @@ export function createHeader() {
     const li1 = document.createElement('li');
     li1.appendChild(link);
     link.textContent = "S'entrainer";
-    link.href = "pages/preparation-seance"
+    link.href = "/appSport/pages/preparation-seance"
     lst.appendChild(li1);
     const li2 = document.createElement('li');
     li2.textContent = "Mon compte";

@@ -18,13 +18,13 @@ export function createFooter() {
     const li3 = document.createElement('li');
     const link1 = document.createElement('a');
     link1.textContent = "Mentions légales";
-    link1.href = "pages/mentions-legales";
+    link1.href = "/appSport/pages/mentions-legales";
     lst1.appendChild(li3).appendChild(link1);
 
     const li4 = document.createElement('li');
     const link2 = document.createElement('a');
     link2.textContent = "Je suis perdu";
-    link2.href = "../../../index.html#informations";
+    link2.href = "/appSport/index.html#informations";
     lst1.appendChild(li4).appendChild(link2);
 
 
