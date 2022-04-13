@@ -239,6 +239,7 @@ main#seance section ::-webkit-progress-bar {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 5px;
   background-color: #4a4a4a;
+  position: relative;
 }
 main#seance section ::-webkit-progress-value {
   border-radius: 5px;

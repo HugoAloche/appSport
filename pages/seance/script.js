@@ -8,16 +8,19 @@ var lst_img = [];
 var lst_exos = [];
 
 function initApp() {
+    let i = 0;
     createFooter();
-    for (let i = 0; i < localStorage.length; i++) {
-        let exos = {
-            index: i,
-            title: Object.keys(localStorage)[i],
-            done: false
+    for (let key in localStorage) {
+        if (key.includes('exos')) {
+            let exos = {
+                index: i,
+                title: Object.keys(key)[i],
+                done: false
+            }
+            lst_exos.push(exos);
+            i++;
         }
-        lst_exos.push(exos);
     }
-    console.table(localStorage);
     const title = document.getElementById('title');
     const img = document.getElementById('img');
     const btn_done = document.getElementById('done');
@@ -93,18 +96,23 @@ function finish() {
 function getIndex() {
     let find = false;
     let index = 0;
+    let i = 0;
     let exos_done = 0;
-    lst_exos.forEach(elem => {
-        if (elem.done == false) {
-            find = true;
-            index = elem.index;
-        } else {
-            exos_done++;
-            if (exos_done == lst_exos.length) {
-                finish();
+
+    for (let key in localStorage) {
+        if (key.includes('exos')) {
+            if (lst_exos[i].done == false) {
+                find = true;
+                index = lst_exos[i].index;
+            } else {
+                exos_done++;
+                if (exos_done == lst_exos.length) {
+                    finish();
+                }
             }
+            i++;
         }
-    })
+    }
     if (find) {
         return lst_exos[index].index;
     }
@@ -112,7 +120,6 @@ function getIndex() {
 
 function makeTable(difficulty, name, series) {
     const table = document.getElementById('table');
-    console.log(difficulty, name, series);
     let td_lst = [];
     for (let i = 0; i < series; i++) {
         let tds = [];
