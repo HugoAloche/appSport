@@ -21,14 +21,20 @@ export function createFooter() {
     link1.href = "pages/mentions-legales";
     lst1.appendChild(li3).appendChild(link1);
 
+    const li4 = document.createElement('li');
+    const link2 = document.createElement('a');
+    link2.textContent = "Je suis perdu";
+    link2.href = "../../../index.html#informations";
+    lst1.appendChild(li4).appendChild(link2);
+
 
     //* LISTE 2
-    const li4 = document.createElement('li');
-    li4.textContent = "Me contacter";
-    lst2.appendChild(li4);
     const li5 = document.createElement('li');
-    const link2 = document.createElement('a');
-    link2.textContent = "haloche035@gmail.com";
-    link2.href = "mailto:haloche035@gmail.com";
-    lst2.appendChild(li5).appendChild(link2);
+    li5.textContent = "Me contacter";
+    lst2.appendChild(li5);
+    const li6 = document.createElement('li');
+    const link3 = document.createElement('a');
+    link3.textContent = "haloche035@gmail.com";
+    link3.href = "mailto:haloche035@gmail.com";
+    lst2.appendChild(li6).appendChild(link3);
 }

@@ -7,7 +7,12 @@
 }
 
 p,
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #4a4a4a;
 }
 
@@ -25,14 +30,57 @@ h1 {
   background-color: rgba(7, 69, 150, 0.6);
   width: fit-content;
   display: none;
+  align-items: center;
+}
+.info.blue span {
+  font-size: 24px;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   margin: 50px 0;
   text-align: center;
   font-size: 24px;
+}
+
+article {
+  width: 90%;
+}
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6,
+article p {
+  text-align: left;
+}
+article ul {
+  margin: 25px 0;
+}
+article ul li {
+  color: #4a4a4a;
+  margin: 25px 0;
+}
+article ul li span {
+  font-size: 24px;
+}
+article h1 {
+  position: relative;
+}
+article h1::before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 6px;
+  background-color: #006eff;
+  left: 0;
+  bottom: -10px;
+  border-radius: 0 10px 0 0;
 }
 
 a {
@@ -109,7 +157,6 @@ main section {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  min-height: 100vh;
   padding: 50px 0;
   gap: 35px;
   padding: 50px 0;
@@ -207,7 +254,7 @@ main#Home {
   background-size: contain;
 }
 main#Home section {
-  background-color: rgba(0, 110, 255, 0.8);
+  background-color: rgba(0, 110, 255, 0.7);
   justify-content: center;
 }
 main#Home section h1,
@@ -230,6 +277,29 @@ main#Home section .wrapper .info img {
   width: auto;
   border-radius: inherit;
   box-shadow: 0 0 0 0;
+}
+main#Home section table {
+  margin: 0 15px;
+}
+main#Home section table thead tr th {
+  background-color: #eee;
+  color: #3a3a3a;
+  text-align: left;
+  border: solid 1px rgba(133, 133, 133, 0.4);
+  padding: 10px;
+}
+main#Home section table tbody tr td {
+  background-color: #FFF;
+  color: #4a4a4a;
+  border-bottom: solid 1px rgba(133, 133, 133, 0.4);
+  text-align: left;
+}
+main#Home section table tbody tr td a {
+  color: #006eff;
+}
+main#Home section table tbody tr.disable td {
+  text-decoration: line-through;
+  text-decoration-color: red;
 }
 
 table {
