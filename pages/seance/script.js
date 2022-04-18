@@ -8,6 +8,9 @@ var lst_img = [];
 var lst_exos = [];
 
 function initApp() {
+    if (localStorage.length < 2) {
+        location.href = '/appSport/pages/preparation-seance';
+    }
     let i = 0;
     createFooter();
     for (let key in localStorage) {

@@ -124,7 +124,7 @@ button {
   border-radius: 5px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: background-color 400ms;
+  transition: background-color 400ms, opacity 400ms, transform 400ms;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -328,6 +328,17 @@ table thead tr th:last-child {
 table tbody tr td {
   padding: 15px;
   text-align: center;
+}
+
+.timmer {
+  background-color: #006eff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #FFF;
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: 4px;
 }
 
 form {
