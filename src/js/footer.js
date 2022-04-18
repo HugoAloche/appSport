@@ -12,7 +12,7 @@ export function createFooter() {
     lst1.appendChild(li1);
 
     const li2 = document.createElement('li');
-    li2.textContent = "Dernière mise à jour (v1.2) : 13/04/2022";
+    li2.textContent = "Dernière mise à jour (v1.2b) : 18/04/2022";
     lst1.appendChild(li2);
 
     const li3 = document.createElement('li');
@@ -25,7 +25,7 @@ export function createFooter() {
 
     const li4 = document.createElement('li');
     const link2 = document.createElement('a');
-    link2.textContent = "Je suis perdu";
+    link2.textContent = "Vous avez des questions ? On à des réponses.";
     link2.addEventListener('click', function() {
         location.href = "/appSport/index.html#informations"
     })

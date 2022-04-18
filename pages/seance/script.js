@@ -42,7 +42,7 @@ function startPause() {
     setTimeout(() => {
         document.getElementById('pause').value = i;
         i++;
-        current_time.textContent = i + "s";
+        current_time.textContent = parseInt(current_time.textContent) - 1;
         if (i < 31) {
             startPause();
         } else {
@@ -50,7 +50,7 @@ function startPause() {
             document.getElementById('done').style.visibility = "visible";
             document.getElementById('pauseText').style.display = "none";
             document.getElementById('pause').value = 0;
-            current_time.textContent = "0";
+            current_time.textContent = "30";
         }
     }, 1000);
 }
@@ -65,7 +65,7 @@ function seriesDone(index) {
             k++;
         }
     })
-    if (k === 3) {
+    if (k === JSON.parse(localStorage.getItem('difficulty')).series) {
         let finis = 0;
         k = 0;
         lst_exos[index].done = true;

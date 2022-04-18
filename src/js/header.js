@@ -10,5 +10,6 @@ export function createHeader() {
     lst.appendChild(li1);
     const li2 = document.createElement('li');
     li2.textContent = "Mon compte";
+    li2.classList.add('disable');
     lst.appendChild(li2);
 }

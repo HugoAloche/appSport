@@ -9,13 +9,20 @@ function initApp() {
     const secondes = document.querySelector('.secondes');
 
     document.querySelector('#start').addEventListener('click', function() {
-        this.style.opacity = "0";
-        this.style.transform = "translateY(-10vh)";
-        startTimmer(minutes, secondes);
+        this.style.transform = "translateY(50px)";
         setTimeout(() => {
-            this.style.display = "none";
-        }, 400);
+            this.style.transform = "translateY(-10vh)";
+            this.style.opacity = "0";
+            setTimeout(() => {
+                this.style.display = "none";
+            }, 600);
+        }, 100);
+        startTimmer(minutes, secondes);
     })
+
+    if (!navigator.onLine) {
+        document.querySelector('iframe').style.display = "none";
+    }
 }
 
 function startTimmer(minutes, secondes) {

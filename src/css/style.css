@@ -35,6 +35,9 @@ h6 {
 .info.blue span {
   font-size: 24px;
 }
+.info a {
+  color: #006eff;
+}
 
 h1,
 h2,
@@ -124,7 +127,7 @@ button {
   border-radius: 5px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: background-color 400ms, opacity 400ms, transform 400ms;
+  transition: background-color 400ms, opacity 600ms, transform 600ms;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -227,22 +230,45 @@ main section .wrapper .box.checked::before {
 main section .wrapper .box:hover {
   box-shadow: none;
 }
+main section#fin img {
+  width: 100%;
+}
 main#seance section {
   margin: 50px 0;
   justify-content: flex-start;
   gap: 35px;
 }
-main#seance section progress {
-  -webkit-appearance: none;
+main#seance section #progress {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
-main#seance section ::-webkit-progress-bar {
+main#seance section #progress p {
+  z-index: 10;
+  color: #FFF;
+  font-size: 40px;
+  position: absolute;
+  width: 100%;
+  font-weight: 100;
+  letter-spacing: 6px;
+  text-align: center;
+}
+main#seance section #progress progress {
+  -webkit-appearance: none;
+  transform: rotate(270deg);
+  height: 100%;
+  width: 100%;
+}
+main#seance section #progress ::-webkit-progress-bar {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #4a4a4a;
   position: relative;
 }
-main#seance section ::-webkit-progress-value {
-  border-radius: 5px;
+main#seance section #progress ::-webkit-progress-value {
+  border-radius: 10px;
   background-color: #006eff;
   transition: width 400ms;
 }
@@ -286,6 +312,7 @@ main#Home section .wrapper .info img {
 }
 main#Home section table {
   margin: 0 15px;
+  width: 95%;
 }
 main#Home section table thead tr th {
   background-color: #eee;
@@ -312,6 +339,7 @@ table {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-spacing: 0;
   border-radius: 0 0 5px 5px;
+  width: 100%;
 }
 table thead tr th {
   padding: 15px;
@@ -402,6 +430,10 @@ header ul li a::before {
 }
 header ul li a:hover::before {
   left: 0;
+}
+header ul li.disable {
+  text-decoration: line-through;
+  text-decoration-color: red;
 }
 
 footer {
