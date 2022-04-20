@@ -522,6 +522,10 @@ header {
 
 footer {
     padding: 50px;
+    padding-bottom: 20vh;
+    @media screen and (max-width: 325px) {
+        padding-bottom: 40vh;
+    }
     background-color: #4a4a4a;
     display: flex;
     justify-content: space-around;

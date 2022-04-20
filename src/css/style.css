@@ -494,11 +494,17 @@ header ul li.disable {
 
 footer {
   padding: 50px;
+  padding-bottom: 20vh;
   background-color: #4a4a4a;
   display: flex;
   justify-content: space-around;
   gap: 35px;
   width: 100%;
+}
+@media screen and (max-width: 325px) {
+  footer {
+    padding-bottom: 40vh;
+  }
 }
 @media screen and (max-width: 768px) {
   footer {
