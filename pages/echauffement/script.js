@@ -1,9 +1,11 @@
+import { mobileMenu } from "../../src/js/menu.js";
 import { createFooter } from "../../src/js/footer.js";
 
 window.addEventListener('load', initApp);
 let i = 0;
 
 function initApp() {
+    mobileMenu();
     createFooter();
     const minutes = document.querySelector('.minutes');
     const secondes = document.querySelector('.secondes');

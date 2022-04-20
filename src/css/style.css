@@ -6,6 +6,11 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 p,
 h1,
 h2,
@@ -16,11 +21,50 @@ h6 {
   color: #4a4a4a;
 }
 
+nav.menu {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 10px 10px 0 0;
+  box-shadow: black 0px 5px 15px;
+  background-color: #FFF;
+}
+nav.menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+nav.menu ul li {
+  background-color: rgba(0, 110, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+}
+nav.menu ul li a {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  color: #3a3a3a;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+nav.menu ul li a img {
+  width: 18px;
+}
+nav.menu ul li.active {
+  background-color: rgba(0, 110, 255, 0.3);
+}
+
 .info {
   padding: 15px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  width: 80%;
+  width: 100%;
   display: flex;
   gap: 5px;
   background-color: #eee;
@@ -367,6 +411,11 @@ table tbody tr td {
   font-size: 48px;
   font-weight: 100;
   letter-spacing: 4px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 35px;
 }
 
 form {

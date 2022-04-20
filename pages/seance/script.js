@@ -1,3 +1,4 @@
+import { mobileMenu } from "../../src/js/menu.js";
 import { createFooter } from "../../src/js/footer.js";
 window.addEventListener('load', initApp);
 
@@ -8,6 +9,7 @@ var lst_img = [];
 var lst_exos = [];
 
 function initApp() {
+    mobileMenu();
     if (localStorage.length < 2) {
         location.href = '/appSport/pages/preparation-seance';
     }
