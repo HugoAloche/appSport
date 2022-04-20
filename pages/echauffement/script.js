@@ -9,6 +9,10 @@ function initApp() {
     createFooter();
     const minutes = document.querySelector('.minutes');
     const secondes = document.querySelector('.secondes');
+    const skip = document.querySelector('.timmer img');
+    skip.addEventListener('click', function() {
+        location.href = "/appSport/pages/seance";
+    })
 
     document.querySelector('#start').addEventListener('click', function() {
         this.style.transform = "translateY(50px)";

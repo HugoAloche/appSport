@@ -432,8 +432,8 @@ table {
 
 .timmer {
     background-color: rgb(0, 110, 255);
-    padding: 25px;
     border-radius: 10px;
+    padding: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: #FFF;
     font-size: 48px;
@@ -444,6 +444,13 @@ table {
     display: flex;
     align-items: center;
     gap: 35px;
+    p {
+        color: #FFF;
+    }
+    img {
+        border-left: solid 2px #FFF;
+        cursor: pointer;
+    }
 }
 
 form {

@@ -13,7 +13,6 @@ function initApp() {
         series: 3
     }
     localStorage.setItem('difficulty', JSON.stringify(difficulty_data));
-    console.log(localStorage);
     createFooter();
     const lst_exos = document.querySelectorAll('.box');
     const lst_emojis = [];
@@ -58,7 +57,7 @@ function isActCheck(elem, index) {
         document.getElementById('nb_exos').textContent = nb_checked;
         let exercice = {
             id: index,
-            name: elem.children[1].textContent
+            name: elem.children[1].textContent,
         };
         seance.push(exercice);
     }
@@ -69,6 +68,7 @@ function saveToStorage(event) {
         event.preventDefault();
         alert('Vous devez au moins choisir un exercice.')
     } else {
+        event.preventDefault();
         seance.forEach(function(elem, index) {
             localStorage.setItem('exos' + index, JSON.stringify(elem));
         })

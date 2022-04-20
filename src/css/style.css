@@ -404,8 +404,8 @@ table tbody tr td {
 
 .timmer {
   background-color: #006eff;
-  padding: 25px;
   border-radius: 10px;
+  padding: 25px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: #FFF;
   font-size: 48px;
@@ -416,6 +416,13 @@ table tbody tr td {
   display: flex;
   align-items: center;
   gap: 35px;
+}
+.timmer p {
+  color: #FFF;
+}
+.timmer img {
+  border-left: solid 2px #FFF;
+  cursor: pointer;
 }
 
 form {
