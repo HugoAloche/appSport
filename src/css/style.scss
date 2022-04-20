@@ -436,7 +436,6 @@ table {
     padding: 25px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: #FFF;
-    font-size: 48px;
     font-weight: 100;
     letter-spacing: 4px;
     display: flex;
@@ -444,12 +443,23 @@ table {
     display: flex;
     align-items: center;
     gap: 35px;
+    @media screen and (max-width: 325px) {
+        gap: 15px;
+        padding: 10px;
+    }
     p {
+        font-size: 48px;
         color: #FFF;
+        @media screen and (max-width: 425px) {
+            font-size: 24px;
+        }
     }
     img {
         border-left: solid 2px #FFF;
         cursor: pointer;
+        @media screen and (max-width: 425px) {
+            width: 24px;
+        }
     }
 }
 

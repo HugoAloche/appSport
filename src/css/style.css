@@ -408,7 +408,6 @@ table tbody tr td {
   padding: 25px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   color: #FFF;
-  font-size: 48px;
   font-weight: 100;
   letter-spacing: 4px;
   display: flex;
@@ -417,12 +416,29 @@ table tbody tr td {
   align-items: center;
   gap: 35px;
 }
+@media screen and (max-width: 325px) {
+  .timmer {
+    gap: 15px;
+    padding: 10px;
+  }
+}
 .timmer p {
+  font-size: 48px;
   color: #FFF;
+}
+@media screen and (max-width: 425px) {
+  .timmer p {
+    font-size: 24px;
+  }
 }
 .timmer img {
   border-left: solid 2px #FFF;
   cursor: pointer;
+}
+@media screen and (max-width: 425px) {
+  .timmer img {
+    width: 24px;
+  }
 }
 
 form {
