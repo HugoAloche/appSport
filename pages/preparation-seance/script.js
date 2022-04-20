@@ -68,7 +68,6 @@ function saveToStorage(event) {
         event.preventDefault();
         alert('Vous devez au moins choisir un exercice.')
     } else {
-        event.preventDefault();
         seance.forEach(function(elem, index) {
             localStorage.setItem('exos' + index, JSON.stringify(elem));
         })
